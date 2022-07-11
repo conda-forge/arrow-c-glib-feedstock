@@ -10,7 +10,7 @@ source:
   sha256: ad9a05705117c989c116bae9ac70492fe015050e1b80fb0e38fde4b5d863aaa3
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('arrow-c-glib', max_pin="x.x.x") }}
@@ -27,6 +27,8 @@ requirements:
   host:
     - arrow-cpp {{ version }}
     - glib
+  run:
+    - glib
 
 test:
   commands:
@@ -37,6 +39,10 @@ test:
     - test -f $PREFIX/include/gandiva-glib/gandiva-glib.h  # [unix]
     - test -f $PREFIX/include/parquet-glib/parquet-glib.h  # [unix]
     - test -f $PREFIX/include/plasma-glib/plasma-glib.h  # [unix]
+    
+    # deps
+    - test -f $PREFIX/include/glib-2.0/glib-object.h  # [unix]
+    - test -f $PREFIX/lib/glib-2.0/include/glibconfig.h  # [unix]
 
     # shared
     - test -f $PREFIX/lib/libarrow-glib.so  # [linux]
