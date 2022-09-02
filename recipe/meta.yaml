@@ -10,7 +10,7 @@ source:
   sha256: a9a033f0a3490289998f458680d19579cf07911717ba65afde6cb80070f7a9b5
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('arrow-c-glib', max_pin="x.x.x") }}
@@ -27,6 +27,7 @@ requirements:
   host:
     - arrow-cpp {{ version }}
     - glib
+    - gobject-introspection
   run:
     - glib
 
@@ -36,6 +37,7 @@ test:
     - test -f $PREFIX/include/arrow-glib/arrow-glib.h  # [unix]
     - test -f $PREFIX/include/arrow-dataset-glib/arrow-dataset-glib.h  # [unix]
     - test -f $PREFIX/include/arrow-flight-glib/arrow-flight-glib.h  # [unix]
+    - test -f $PREFIX/include/arrow-flight-sql-glib/arrow-flight-sql-glib.h  # [unix]
     - test -f $PREFIX/include/gandiva-glib/gandiva-glib.h  # [unix]
     - test -f $PREFIX/include/parquet-glib/parquet-glib.h  # [unix]
     - test -f $PREFIX/include/plasma-glib/plasma-glib.h  # [unix]
@@ -47,15 +49,26 @@ test:
     - test -f $PREFIX/lib/libarrow-glib.so  # [linux]
     - test -f $PREFIX/lib/libarrow-dataset-glib.so  # [linux]
     - test -f $PREFIX/lib/libarrow-flight-glib.so  # [linux]
+    - test -f $PREFIX/lib/libarrow-flight-sql-glib.so  # [linux]
     - test -f $PREFIX/lib/libgandiva-glib.so  # [linux]
     - test -f $PREFIX/lib/libparquet-glib.so  # [linux]
     - test -f $PREFIX/lib/libplasma-glib.so  # [linux]
     - test -f $PREFIX/lib/libarrow-glib.dylib  # [osx]
     - test -f $PREFIX/lib/libarrow-dataset-glib.dylib  # [osx]
     - test -f $PREFIX/lib/libarrow-flight-glib.dylib  # [osx]
+    - test -f $PREFIX/lib/libarrow-flight-sql-glib.dylib  # [osx]
     - test -f $PREFIX/lib/libgandiva-glib.dylib  # [osx]
     - test -f $PREFIX/lib/libparquet-glib.dylib  # [osx]
     - test -f $PREFIX/lib/libplasma-glib.dylib  # [osx]
+
+    # Typelib
+    - test -f $PREFIX/lib/girepository-1.0/Arrow-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/ArrowDataset-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/ArrowFlight-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/ArrowFlightSQL-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/Gandiva-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/Parquet-*.typelib  # [unix]
+    - test -f $PREFIX/lib/girepository-1.0/Plasma-*.typelib  # [unix]
 
 about:
   home: https://arrow.apache.org
