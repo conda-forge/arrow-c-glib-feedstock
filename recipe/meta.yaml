@@ -66,7 +66,6 @@ test:
     - test -f $PREFIX/lib/girepository-1.0/ArrowFlightSQL-*.typelib  # [unix]
     - test -f $PREFIX/lib/girepository-1.0/Gandiva-*.typelib  # [unix]
     - test -f $PREFIX/lib/girepository-1.0/Parquet-*.typelib  # [unix]
-    - test -f $PREFIX/lib/girepository-1.0/Plasma-*.typelib  # [unix]
 
 about:
   home: https://arrow.apache.org
