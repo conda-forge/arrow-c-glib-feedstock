@@ -11,7 +11,7 @@ source:
   sha256: 3481c411393aa15c75e88d93cf8315faf7f43e180fe0790128d3840d417de858
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('arrow-c-glib', max_pin="x.x.x") }}
