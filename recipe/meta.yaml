@@ -26,7 +26,7 @@ requirements:
     - ninja
     - pkg-config  # [osx]
   host:
-    - libarrow {{ version_major }}
+    - libarrow-all {{ version_major }}
     - glib
     - gobject-introspection
   run:
