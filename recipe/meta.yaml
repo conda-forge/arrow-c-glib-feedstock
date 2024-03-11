@@ -1,5 +1,5 @@
 {% set name = "arrow-c-glib" %}
-{% set version = "15.0.0" %}
+{% set version = "15.0.1" %}
 {% set version_major = version.split(".")[0] %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://dist.apache.org/repos/dist/release/arrow/arrow-{{ version }}/apache-arrow-{{ version }}.tar.gz
-  sha256: 01dd3f70e85d9b5b933ec92c0db8a4ef504a5105f78d2d8622e84279fb45c25d
+  sha256: 55db63ed9fd6917b7abfe5d4186c9f532cbe48aa53f4040d57e7c29ad70bcefa
 
 build:
   number: 0
