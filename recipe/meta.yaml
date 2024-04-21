@@ -1,5 +1,5 @@
 {% set name = "arrow-c-glib" %}
-{% set version = "15.0.2" %}
+{% set version = "16.0.0" %}
 {% set version_major = version.split(".")[0] %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://dist.apache.org/repos/dist/release/arrow/arrow-{{ version }}/apache-arrow-{{ version }}.tar.gz
-  sha256: abbf97176db6a9e8186fe005e93320dac27c64562755c77de50a882eb6179ac6
+  sha256: 9f4051ae9473c97991d9af801e2f94ae3455067719ca7f90b8137f9e9a700b8d
 
 build:
   number: 0
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - gobject-introspection
