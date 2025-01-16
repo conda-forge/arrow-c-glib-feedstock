@@ -179,6 +179,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@conda-forge/arrow-cpp](https://github.com/orgs/conda-forge/teams/arrow-cpp/)
 * [@raulcd](https://github.com/raulcd/)
 * [@xhochy](https://github.com/xhochy/)
 * [@xmnlab](https://github.com/xmnlab/)
