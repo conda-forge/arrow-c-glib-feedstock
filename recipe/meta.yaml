@@ -1,10 +1,9 @@
-{% set name = "arrow-c-glib" %}
 {% set version = "19.0.0" %}
 {% set version_major = version.split(".")[0] %}
 {% set version_minor = version.split(".")[1] %}
 
 package:
-  name: {{ name|lower }}
+  name: arrow-c-glib
   version: {{ version }}
 
 source:
