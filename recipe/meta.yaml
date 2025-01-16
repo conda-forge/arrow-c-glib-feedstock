@@ -88,3 +88,4 @@ extra:
     - raulcd
     - xmnlab
     - xhochy
+    - conda-forge/arrow-cpp
