@@ -1,18 +1,18 @@
-{% set name = "arrow-c-glib" %}
-{% set version = "18.1.0" %}
+{% set version = "19.0.0" %}
 {% set version_major = version.split(".")[0] %}
 {% set version_minor = version.split(".")[1] %}
 
 package:
-  name: {{ name|lower }}
+  name: arrow-c-glib
   version: {{ version }}
 
 source:
-  url: https://dist.apache.org/repos/dist/release/arrow/arrow-{{ version }}/apache-arrow-{{ version }}.tar.gz
-  sha256: 2dc8da5f8796afe213ecc5e5aba85bb82d91520eff3cf315784a52d0fa61d7fc
+  url: https://www.apache.org/dyn/closer.lua/arrow/arrow-{{ version }}/apache-arrow-{{ version }}.tar.gz?action=download
+  fn: apache-arrow-{{ version }}.tar.gz
+  sha256: f89b93f39954740f7184735ff1e1d3b5be2640396febc872c4955274a011f56b
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('arrow-c-glib', max_pin="x.x.x") }}
